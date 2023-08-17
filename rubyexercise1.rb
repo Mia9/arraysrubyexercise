@@ -23,9 +23,17 @@ def remove_dupes(numbers)
 end
 
 #4. Reverse Array
-def reverse_numbers(numbers)
-	puts "#{numbers.reverse}"
+	#def reverse_numbers(numbers) #using built in style
+	#	puts "#{numbers.reverse}"
+	#end
+
+#4. Reverse Array Custom built
+def reverse_numbers_custom(numbers)
+	(numbers.size/2).times.with_object(numbers.dup) do |i,a| 
+    a[i], a[-1-i] = a[-1-i] , a[i]
+  end
 end
+
 
 #5. Array Rotation
 def rotate_horizontal(numbers)
@@ -35,5 +43,6 @@ end
 puts sum_value(arr)
 puts find_max_num(arr)
 puts remove_dupes(arr)
-puts reverse_numbers (arr)
+#puts reverse_numbers (arr)
+puts reverse_numbers_custom(arr)
 puts rotate_horizontal(arr)
